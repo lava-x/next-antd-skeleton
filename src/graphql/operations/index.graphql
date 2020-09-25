@@ -1,0 +1,144 @@
+fragment BusinessContactFragment on BusinessContact {
+  firstName
+  lastName
+  phoneCode
+  phoneNumber
+  email
+}
+
+fragment BusinessAddressFragment on BusinessAddress {
+  id
+  address1
+  address2
+  city
+  latitude
+  longitude
+  province
+  postalCode
+  country
+  createdAt
+  updatedAt
+}
+
+fragment BusinessAddressBookFragment on BusinessAddressBook {
+  id
+  isPrimary
+  contact {
+    ...BusinessContactFragment
+  }
+  address {
+    ...BusinessAddressFragment
+  }
+  generalStatus
+  businessId
+  createdAt
+  updatedAt
+}
+
+fragment BusinessFragment on Business {
+  id
+  createdAt
+  updatedAt
+  name
+  bodyTemperature
+  status
+  verificationStatus
+  type
+  businessAddresses {
+    ...BusinessAddressBookFragment
+  }
+}
+
+query getBusinessProfile($input: CommonBusinessesQueryInput!) {
+  getBusinessProfile(input: $input) {
+    ...BusinessFragment
+  }
+}
+
+query getBusinessProfileByCheckinId($ID: String!) {
+  getBusinessProfileByCheckinId(ID: $ID) {
+    ...BusinessFragment
+  }
+}
+
+fragment MerchantInfo on Merchant {
+  id
+  email
+  firstName
+  lastName
+  phoneCode
+  phoneNumber
+  referralCode
+  role
+  generalStatus
+  hasBusiness
+  createdAt
+  updatedAt
+  identities {
+    id
+    createdAt
+    updatedAt
+    provider
+    providerId
+  }
+}
+
+query getMerchantAuthProfile {
+  getMerchantAuthProfile {
+    ...MerchantInfo
+  }
+}
+
+query validateToken($token: String!) {
+  validateToken(token: $token)
+}
+
+mutation merchantSignUp($input: MerchantCreateInput!) {
+  merchantSignUp(input: $input) {
+    ...MerchantInfo
+  }
+}
+
+mutation merchantSignIn($input: MerchantSignInInput!) {
+  merchantSignIn(input: $input) {
+    merchant {
+      ...MerchantInfo
+    }
+    accessToken
+    expiresIn
+  }
+}
+
+mutation merchantSignInWithSocial($accessToken: String!, $platform: String!) {
+  merchantSignInWithSocial(accessToken: $accessToken, platform: $platform) {
+    merchant {
+      ...MerchantInfo
+    }
+    accessToken
+    expiresIn
+  }
+}
+
+mutation requestResetPasswordToken($email: String!) {
+  requestResetPasswordToken(email: $email)
+}
+
+mutation merchantResetPassword($input: MerchantResetPasswordInput!) {
+  merchantResetPassword(input: $input) {
+    merchant {
+      ...MerchantInfo
+    }
+    accessToken
+    expiresIn
+  }
+}
+
+mutation merchantChangePassword($input: MerchantChangePasswordInput!) {
+  merchantChangePassword(input: $input)
+}
+
+mutation updateMerchant($input: MerchantUpdateInput!) {
+  updateMerchant(input: $input) {
+    ...MerchantInfo
+  }
+}

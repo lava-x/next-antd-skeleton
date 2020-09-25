@@ -1,0 +1,25 @@
+overwrite: true
+schema: "http://localhost:3000/graphql"
+documents:
+  - ./src/graphql/operations/index.graphql
+generates:
+  ./src/graphql/@types/index.ts:
+    plugins:
+      - add:
+          content: "/* eslint-disable */"
+      - typescript
+  ./src:
+    preset: near-operation-file
+    presetConfig:
+      extension: .tsx
+      baseTypesPath: ./@types/index.ts
+    plugins:
+      - add:
+          content: "/* eslint-disable */"
+      - typescript-operations
+      - typescript-react-apollo:
+          fragmentVariableSuffix: Fragment
+
+hooks:
+  afterAllFileWrite:
+    - prettier --write

@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@types": ["./src/@types/index"],
+      "config/*": ["./src/config/*"],
+      "helpers/*": ["./src/helpers/*"],
+      "screens/*": ["./src/screens/*"],
+      "components/*": ["./src/components/*"],
+      "containers/*": ["./src/containers/*"],
+      "constants/*": ["./src/config/constants/*"],
+      "app-graphql": ["src/graphql/index"],
+      "locales/*": ["./public/static/locales/*"],
+      "assets/*": ["./public/static/assets/*"],
+      "styles/*": ["./styles/*"],
+      "i18n/*": ["./i18n/*"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+}

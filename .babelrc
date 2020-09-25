@@ -1,0 +1,41 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "styled-jsx": {
+          "plugins": ["styled-jsx-plugin-less"]
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "styled-components",
+      {
+        "ssr": true,
+        "displayName": true,
+        "preprocess": false
+      }
+    ],
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "config/*": ["./src/config/*"],
+          "helpers/*": ["./src/helpers/*"],
+          "screens/*": ["./src/screens/*"],
+          "components/*": ["./src/components/*"],
+          "containers/*": ["./src/containers/*"],
+          "constants/*": ["./src/config/constants/*"],
+          "app-graphql": ["src/graphql/index"],
+          "locales/*": ["./public/static/locales/*"],
+          "assets/*": ["./public/static/assets/*"],
+          "styles/*": ["./styles/*"],
+          "i18n/*": ["./i18n/*"]
+        }
+      }
+    ]
+  ]
+}
