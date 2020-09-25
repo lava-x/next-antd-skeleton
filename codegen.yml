@@ -8,7 +8,7 @@ generates:
       - add:
           content: "/* eslint-disable */"
       - typescript
-  ./src:
+  ./src/graphql:
     preset: near-operation-file
     presetConfig:
       extension: .tsx
