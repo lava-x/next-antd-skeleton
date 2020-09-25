@@ -1,3 +1,4 @@
+import React from "react";
 import { withTranslation } from "i18n";
 import TSPinNumberView from "components/TSPinNumberView";
 

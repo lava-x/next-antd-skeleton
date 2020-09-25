@@ -35,7 +35,9 @@ module.exports = withPlugins(
           if (isServer) {
             const antStyles = /antd\/.*?\/style.*?/;
             const origExternals = [...config.externals];
+            // eslint-disable-next-line
             config.externals = [
+              // eslint-disable-next-line
               (context, request, callback) => {
                 if (request.match(antStyles)) return callback();
                 if (typeof origExternals[0] === "function") {

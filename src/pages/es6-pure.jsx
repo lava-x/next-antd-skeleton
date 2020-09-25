@@ -1,3 +1,4 @@
+import React from "react";
 import { withTranslation } from "i18n";
 import ES6Component from "components/ES6PinNumberView";
 
