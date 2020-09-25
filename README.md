@@ -2,6 +2,14 @@ This project skeleton is created by [LavaX Technologies Sdn Bhd](https://lavax.c
 
 NextJs with combination of technologies that enable developers to getting started with ease.
 
+# Used of Technologies
+
+1.  Coding styles - `TypeScript` & `ES6` are enabled
+2.  UI styles - `styled-jsx` & `styled-components`, works on both SSR & SSG
+3.  UI Framework - `AntDesign`
+4.  Coding Practice - `Eslint` rules for `(.ts, .tsx, .js, .jsx)`
+5.  API Integration - `GraphQL (with codegen)`
+
 # Getting Started
 
 Available commands:
@@ -28,13 +36,74 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 ---
 
-## Used of Technologies
+## GraphQL CodeGen
 
-1.  Coding styles - `TypeScript` & `ES6` are enabled
-2.  UI styles - `styled-jsx` & `styled-components`, both will works on SSR & SSG
-3.  UI Framework - `AntDesign`
-4.  Coding Practice - `Eslint` rules for `(.ts, .tsx, .js, .jsx)`
-5.  API Integration - `GraphQL (with codegen)`
+First step is change the schema url to your development server at `.codegen.yml`
+
+```yml
+schema: "http://localhost:3000/graphql"
+```
+
+Second step find the operations file at `src/graphql/operations/index.graphql` and modify it, for example
+
+```GraphQL
+fragment MerchantInfo on Merchant {
+  id
+  email
+  firstName
+  lastName
+  phoneCode
+  phoneNumber
+  referralCode
+  role
+  generalStatus
+  hasBusiness
+  createdAt
+  updatedAt
+  identities {
+    id
+    createdAt
+    updatedAt
+    provider
+    providerId
+  }
+}
+
+query getMerchantAuthProfile {
+  getMerchantAuthProfile {
+    ...MerchantInfo
+  }
+}
+```
+
+Third Step is to generate the GraphQL Types, Documents, Hooks by running the command `yarn gql:generate`
+![GraphQL Codegen](./docs/gql-generate.gif)
+
+Fourth Step is to import any of Types, Documents, Hooks to your components or the places you wants to use it
+
+```js
+// example from src/config/getAuthProfile.ts
+import get from "lodash/get";
+import { GetMerchantAuthProfileDocument } from "app-graphql";
+import { ApolloClient, NormalizedCacheObject } from "@apollo/client";
+
+export default (
+  apolloClient: ApolloClient<NormalizedCacheObject>
+): Promise<{ authUser: any }> => {
+  return apolloClient
+    .query({
+      query: GetMerchantAuthProfileDocument
+    })
+    .then(({ data }) => {
+      const authUser = get(data, "getMerchantAuthProfile", null);
+      return { authUser };
+    })
+    .catch(() => {
+      // Fail gracefully
+      return { authUser: null };
+    });
+};
+```
 
 # About US
 
