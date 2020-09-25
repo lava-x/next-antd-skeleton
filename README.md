@@ -1,30 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This project skeleton is created by [LavaX Technologies Sdn Bhd](https://lavax.co) that is great for project planning on transition from ES6 to TypeScript.
 
-## Getting Started
+NextJs with combination of technologies that enable developers to getting started with ease.
 
-First, run the development server:
+# Getting Started
+
+Available commands:
 
 ```bash
-npm run dev
-# or
-yarn dev
+yarn build # to build
+
+yarn start # to start production server
+
+yarn dev # to start development server
+
+yarn clean # to remove .next folder
+
+yarn eslint # to run eslint rules check
+
+yarn eslint-fix # to run eslint rules & soft fix
+
+yarn gql-generate # to generate graphql Types, hooks, Documents based on input operations
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3100](http://localhost:3100) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Used of Technologies
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1.  Coding styles - `TypeScript` & `ES6` are enabled
+2.  UI styles - `styled-jsx` & `styled-components`, both will works on SSR & SSG
+3.  UI Framework - `AntDesign`
+4.  Coding Practice - `Eslint` rules for `(.ts, .tsx, .js, .jsx)`
+5.  API Integration - `GraphQL (with codegen)`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# About US
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Check out our company profile [LavaX Technologies Sdn Bhd](https://lavax.co), and welcome to reach out for inquires.
