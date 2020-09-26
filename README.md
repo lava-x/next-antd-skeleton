@@ -12,6 +12,11 @@ NextJs with combination of technologies that enable developers to getting starte
 
 # Getting Started
 
+**Note: To install components with yarn we first need to configure @bit as a scoped registry. **
+```bash
+npm config set @bit:registry https://node.bit.dev
+```
+
 Available commands:
 
 ```bash
