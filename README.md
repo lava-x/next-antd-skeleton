@@ -12,9 +12,18 @@ NextJs with combination of technologies that enable developers to getting starte
 
 # Getting Started
 
-**Note: To install components with yarn we first need to configure @bit as a scoped registry. **
+**Note: To install @lava-x private packages, we first need to setup project level .npmrc file. **
+
+1. Create .npmrc file in project root level
+2. Paste below code into the .npmrc & save
+```
+//registry.npmjs.org/:_authToken=${REQUEST_TOKEN_FROM_LAVAX_TEAM}
+```
+3. Install packages 
 ```bash
-npm config set @bit:registry https://node.bit.dev
+yarn
+# or
+yarn install
 ```
 
 Available commands:
