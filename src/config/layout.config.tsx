@@ -10,7 +10,7 @@ import {
   UserOutlined,
   CodepenOutlined
 } from "@ant-design/icons";
-import { MenuItemOption } from "@bit/lavax.lxnext.lxhelpers";
+import { MenuItemOption } from "@lava-x/helpers";
 
 export const headerMenus: MenuItemOption[] = [
   {

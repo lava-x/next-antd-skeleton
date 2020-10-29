@@ -1,4 +1,4 @@
-import { ClientOptions } from "@bit/lavax.lxnext.lxnext";
+import { ClientOptions } from "@lava-x/next-js";
 import {
   GRAPHQL_ENDPOINT,
   GRAPHQL_SUBSCRIPTION_ENDPOINT
@@ -21,7 +21,7 @@ const options: ClientOptions = {
   resolvers: {},
   typeDefs: {},
   connectToDevTools: !isProduction && typeof window !== "undefined",
-  getAuthToken: null // getTokenFromCookies from "@bit/lavax.lxnext.lxnext"
+  getAuthToken: null // getTokenFromCookies from "@lava-x/next-js"
 };
 
 export default options;

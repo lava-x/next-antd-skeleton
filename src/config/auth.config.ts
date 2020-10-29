@@ -11,7 +11,7 @@ import {
   NO_LAYOUT_PATH
 } from "config/constant";
 import checkAuthProfile from "config/getAuthProfile";
-import { AuthOptions } from "@bit/lavax.lxnext.lxnext";
+import { AuthOptions } from "@lava-x/next-js";
 
 const authOptions: AuthOptions = {
   checkAuthProfile,
