@@ -9,7 +9,8 @@
     "clean": "rimraf .next",
     "eslint": "eslint .",
     "eslint-fix": "eslint --fix .",
-    "gql:generate": "graphql-codegen --config codegen.yml"
+    "gql:generate": "graphql-codegen --config codegen.yml",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
@@ -53,6 +54,7 @@
     "babel-plugin-import": "^1.13.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-styled-components": "^1.11.1",
+    "cypress": "^5.5.0",
     "eslint": "^7.9.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-airbnb-typescript": "^10.0.0",
