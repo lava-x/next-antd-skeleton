@@ -19,7 +19,7 @@
       "config/*": ["./src/config/*"],
       "helpers/*": ["./src/helpers/*"],
       "screens/*": ["./src/screens/*"],
-      "components/*": ["./src/components/*"],
+      "components/*": ["src/components/*"],
       "containers/*": ["./src/containers/*"],
       "constants/*": ["./src/config/constants/*"],
       "app-graphql": ["src/graphql/index"],
@@ -29,6 +29,5 @@
       "i18n/*": ["./i18n/*"]
     }
   },
-  "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "exclude": ["node_modules"]
 }

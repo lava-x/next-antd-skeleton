@@ -5,8 +5,8 @@ import { Row, Col } from "antd";
 import { Wrapper, styles } from "./styles";
 
 // ======================= PROPS
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
-  pin: any;
+export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+  pin: number;
 }
 
 const PinNumberViewComponent: FC<Props> = ({ pin, className }) => {

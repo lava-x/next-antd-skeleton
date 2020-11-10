@@ -1,6 +1,6 @@
 import React from "react";
 import { withTranslation } from "i18n";
-import ES6Component from "components/ES6PinNumberView";
+import ES6Component from "src/components/ES6PinNumberView";
 
 const Page = () => {
   return (
