@@ -139,9 +139,8 @@ https://github.com/cypress-io/cypress-realworld-app
 
 ### Issues
 
-#### Storybook stucks at building
-Delete `node_modules` and `yarn.lock` and run `yarn`
-
+Storybook does not work with `styled-jsx-plugin-less`. Use `styled-jsx-plugin-sass` for now.
+https://github.com/vercel/next.js/issues/19058
 
 # About US
 
