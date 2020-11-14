@@ -25,11 +25,11 @@ const nextConfig = {
 module.exports = withPlugins(
   [
     [
-      withLess,
-      {
+      withLess({
         lessLoaderOptions: {
           javascriptEnabled: true,
-          modifyVars: themeVariables // make your antd custom effective
+          modifyVars: themeVariables, // make your antd custom effective
+          importLoaders: 0
         },
         webpack: (config, { isServer }) => {
           if (isServer) {
@@ -56,7 +56,7 @@ module.exports = withPlugins(
           }
           return config;
         }
-      }
+      })
     ],
     withImages
   ],

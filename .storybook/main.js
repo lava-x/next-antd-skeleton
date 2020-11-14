@@ -1,5 +1,5 @@
-const path = require("path")
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const path = require("path");
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {
   stories: [
@@ -16,9 +16,7 @@ module.exports = {
         {
           loader: "less-loader",
           options: {
-            lessOptions: {
-              javascriptEnabled: true
-            }
+            javascriptEnabled: true
           }
         }
       ]
