@@ -121,27 +121,24 @@ export default (
 
 # E2E Testing
 
-## Best Practices
+## Cypress
 
-1. Use route aliases or assertions to guard Cypress from proceeding until an explicit condition is met.
-2. Use data-* attributes to provide context to your selectors and isolate them from CSS or JS changes.
-3. Only test what you control. Try to avoid requiring a 3rd party server. When necessary, always use cy.request() to talk to 3rd party servers via their APIs
-4. Tests should always be able to be run independently from one another and still pass.
-5. Add multiple assertions and don’t worry about it.
-6. Clean up state before tests run.
+`yarn cypress:open` to start Cypress. It will take a while to verify for the first time. Run the command again after verification completes.
+
+### Best Practices
 
 https://docs.cypress.io/guides/references/best-practices.html
 
 Check out Cypress Real World App as standard
 https://github.com/cypress-io/cypress-realworld-app
 
-## Storybook
+# Storybook
 
-### Get Started
+## Get Started
 
 run `yarn storybook`.
 
-### Issues
+## Issues
 
 Storybook does not work with `styled-jsx-plugin-less`. Use `styled-jsx-plugin-sass` for now.
 https://github.com/vercel/next.js/issues/19058
