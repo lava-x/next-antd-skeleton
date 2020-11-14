@@ -6,7 +6,7 @@ import { Wrapper, styles } from "./styles";
 
 // ======================= PROPS
 export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
-  pin: number;
+  pin: string;
 }
 
 const PinNumberViewComponent: FC<Props> = ({ pin, className }) => {

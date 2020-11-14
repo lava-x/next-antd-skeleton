@@ -137,6 +137,10 @@ https://github.com/cypress-io/cypress-realworld-app
 
 ## Storybook
 
+### Get Started
+
+run `yarn storybook`.
+
 ### Issues
 
 Storybook does not work with `styled-jsx-plugin-less`. Use `styled-jsx-plugin-sass` for now.
