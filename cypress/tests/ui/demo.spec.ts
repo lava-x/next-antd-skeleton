@@ -1,13 +1,12 @@
 describe("Demo", () => {
   it("should see 'ES6 page with TypeScript Component' header", () => {
     cy.visit("/es6-with-ts-component");
-    cy.getBySel("es6-with-ts-h1").should(
-      "equal",
+    cy.getBySel("es6-with-ts-h1").contains(
       "ES6 page with TypeScript Component"
     );
   });
 
-  it("should not see 404", function () {
+  it("should not see 404", () => {
     cy.visit("/es6-with-ts-component");
     cy.location("pathname").should("equal", "/es6-with-ts-component");
 
@@ -16,10 +15,10 @@ describe("Demo", () => {
   });
 
   it("should redirect to 404", () => {
-    cy.visit("/app/dashboard");
+    cy.visit({ url: "/app/dashboard", failOnStatusCode: false });
     cy.location("pathname").should("equal", "/404");
 
-    cy.visit("/products");
+    cy.visit({ url: "/product", failOnStatusCode: false });
     cy.location("pathname").should("equal", "/404");
   });
 });

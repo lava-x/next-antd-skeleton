@@ -1,6 +1,6 @@
 {
   "projectId": "9prwn6",
-  "baseUrl": "http://127.0.0.1:3100",
+  "baseUrl": "http://localhost:3100",
   "integrationFolder": "cypress/tests",
   "viewportHeight": 1000,
   "viewportWidth": 1280,
@@ -9,11 +9,11 @@
     "openMode": 1
   },
   "env": {
-    "apiUrl": "http://127.0.0.1:3001",
+    "apiUrl": "http://localhost:3001",
     "mobileViewportWidthBreakpoint": 414,
     "coverage": false,
     "codeCoverage": {
-      "url": "http://127.0.0.1:3001/__coverage__"
+      "url": "http://localhost:3001/__coverage__"
     }
   }
 }
