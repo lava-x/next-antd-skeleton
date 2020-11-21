@@ -123,7 +123,11 @@ export default (
 
 ## Cypress
 
+`yarn dev` to run the app first to test locally.
+
 `yarn cypress:open` to start Cypress. It will take a while to verify for the first time. Run the command again after verification completes.
+
+If you want test another environment(not localhost), change the `baseUrl` in `cypress.json`
 
 ### Best Practices
 
@@ -140,7 +144,7 @@ run `yarn storybook`.
 
 ## Issues
 
-Storybook does not work with `styled-jsx-plugin-less`. Use `styled-jsx-plugin-sass` for now.
+Storybook does not work with `styled-jsx-plugin-less`. Use `styled-jsx-plugin-sass` for now. 
 https://github.com/vercel/next.js/issues/19058
 
 # About US
